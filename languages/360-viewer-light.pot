@@ -1,0 +1,508 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: 360 Photo Viewer for Elementor & WPBakery\n"
+"POT-Creation-Date: 2018-12-27 12:34+0200\n"
+"PO-Revision-Date: 2018-12-27 12:33+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: plugin.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: data/config.php:15
+msgid "360 Photo Viewer"
+msgstr ""
+
+#: data/config.php:16
+msgid "Photo sphere viewer and the beautiful background for Elementor"
+msgstr ""
+
+#: data/config.php:19 data/config.php:333
+msgid "Content"
+msgstr ""
+
+#: data/config.php:27
+msgid "Upload Panorama Image"
+msgstr ""
+
+#: data/config.php:29 data/config.php:39 data/config.php:57 data/config.php:63
+#: data/config.php:71 data/config.php:78 data/config.php:90 data/config.php:98
+#: data/config.php:111 data/config.php:129 data/config.php:157
+#: data/config.php:171 data/config.php:179 data/config.php:185
+#: data/config.php:192
+msgid "General"
+msgstr ""
+
+#: data/config.php:33
+msgid "Height"
+msgstr ""
+
+#: data/config.php:36 data/config.php:43
+msgid "Custom Height"
+msgstr ""
+
+#: data/config.php:37
+msgid "Full height of section"
+msgstr ""
+
+#: data/config.php:52
+msgid "example: 500"
+msgstr ""
+
+#: data/config.php:61
+msgid "Panorama as background"
+msgstr ""
+
+#: data/config.php:68
+msgid "Mousewheel"
+msgstr ""
+
+#: data/config.php:70 data/config.php:77 data/config.php:85 data/config.php:186
+#: data/config.php:206 data/config.php:382 data/config.php:464
+#: data/config.php:472 data/config.php:483 data/config.php:494
+#: data/config.php:506 data/config.php:517 data/config.php:529
+#: data/config.php:542 data/config.php:566
+msgid "Yes, please"
+msgstr ""
+
+#: data/config.php:75
+msgid "Mousemove"
+msgstr ""
+
+#: data/config.php:83
+msgid "Mousemove Hover"
+msgstr ""
+
+#: data/config.php:94
+msgid "AutoRotate on Start"
+msgstr ""
+
+#: data/config.php:97
+msgid "(msec) If set to 0, auto-rotation will be disabled on start"
+msgstr ""
+
+#: data/config.php:102
+msgid "Rotate speed"
+msgstr ""
+
+#: data/config.php:115 data/config.php:424
+msgid "Blend mode"
+msgstr ""
+
+#: data/config.php:118
+msgid "None"
+msgstr ""
+
+#: data/config.php:119
+msgid "Blur"
+msgstr ""
+
+#: data/config.php:120
+msgid "Brightness"
+msgstr ""
+
+#: data/config.php:121
+msgid "Contrast"
+msgstr ""
+
+#: data/config.php:122
+msgid "Grayscale"
+msgstr ""
+
+#: data/config.php:123
+msgid "Hue-rotate"
+msgstr ""
+
+#: data/config.php:124
+msgid "Invert"
+msgstr ""
+
+#: data/config.php:125 data/config.php:407
+msgid "Opacity"
+msgstr ""
+
+#: data/config.php:126
+msgid "Saturate"
+msgstr ""
+
+#: data/config.php:127
+msgid "Sepia"
+msgstr ""
+
+#: data/config.php:133
+msgid "Filter value"
+msgstr ""
+
+#: data/config.php:161 data/config.php:646
+msgid "Zoom"
+msgstr ""
+
+#: data/config.php:172
+msgid "It sets zoom of image by default."
+msgstr ""
+
+#: data/config.php:176
+msgid "Loading text"
+msgstr ""
+
+#: data/config.php:183
+msgid "Show loading image"
+msgstr ""
+
+#: data/config.php:190
+msgid "Loading image"
+msgstr ""
+
+#: data/config.php:203
+msgid "Enable markers "
+msgstr ""
+
+#: data/config.php:205 data/config.php:210 data/config.php:640
+msgid "Markers"
+msgstr ""
+
+#: data/config.php:220
+msgid "Marker Type"
+msgstr ""
+
+#: data/config.php:223
+msgid "Default (image)"
+msgstr ""
+
+#: data/config.php:224
+msgid "Circle"
+msgstr ""
+
+#: data/config.php:225
+msgid "Post"
+msgstr ""
+
+#: data/config.php:226
+msgid "Product"
+msgstr ""
+
+#: data/config.php:228
+msgid "Notice! Post and Product types support a custom template"
+msgstr ""
+
+#: data/config.php:233
+msgid "Marker Action"
+msgstr ""
+
+#: data/config.php:236
+msgid "Default (open modal)"
+msgstr ""
+
+#: data/config.php:237
+msgid "Custom URL"
+msgstr ""
+
+#: data/config.php:238
+msgid "Go to product (inherit)"
+msgstr ""
+
+#: data/config.php:244
+msgid "Marker Custom URL"
+msgstr ""
+
+#: data/config.php:255
+msgid "Circle Radius"
+msgstr ""
+
+#: data/config.php:258
+msgid "example: 20"
+msgstr ""
+
+#: data/config.php:267
+msgid "Circle Color"
+msgstr ""
+
+#: data/config.php:277
+msgid "Select Post"
+msgstr ""
+
+#: data/config.php:280
+msgid "Select post"
+msgstr ""
+
+#: data/config.php:285
+msgid "Select post which you want to show instead of the marker."
+msgstr ""
+
+#: data/config.php:289
+msgid "Select Product"
+msgstr ""
+
+#: data/config.php:292
+msgid "Select product"
+msgstr ""
+
+#: data/config.php:297
+msgid "Select product which you want to show instead of the marker."
+msgstr ""
+
+#: data/config.php:302
+msgid "Upload Image Marker"
+msgstr ""
+
+#: data/config.php:311
+msgid "Add Marker Coordinates"
+msgstr ""
+
+#: data/config.php:319
+msgid ""
+"Marker coordinates on the image. Don’t forget to fill  Show in Scene param. "
+"Otherwise, you can add the marker to the first scene only."
+msgstr ""
+
+#: data/config.php:323
+msgid "Custom Tooltip"
+msgstr ""
+
+#: data/config.php:329
+msgid "Tooltip appears when hovering cursor."
+msgstr ""
+
+#: data/config.php:340
+msgid ""
+"It adds a custom content to an overlay window. This window opens when you "
+"click on the marker."
+msgstr ""
+
+#: data/config.php:344
+msgid "Marker Max Width"
+msgstr ""
+
+#: data/config.php:355
+msgid "Marker Max Hight"
+msgstr ""
+
+#: data/config.php:365
+msgid "Longitude"
+msgstr ""
+
+#: data/config.php:370
+msgid "Latitude"
+msgstr ""
+
+#: data/config.php:380
+msgid "Enable Overlay"
+msgstr ""
+
+#: data/config.php:383 data/config.php:393 data/config.php:403
+#: data/config.php:420 data/config.php:442
+msgid "Background Overlay"
+msgstr ""
+
+#: data/config.php:387 data/config.php:435
+msgid "Color"
+msgstr ""
+
+#: data/config.php:397
+msgid "Image"
+msgstr ""
+
+#: data/config.php:427
+msgid "Normal"
+msgstr ""
+
+#: data/config.php:428
+msgid "Multiply"
+msgstr ""
+
+#: data/config.php:429
+msgid "Screen"
+msgstr ""
+
+#: data/config.php:430
+msgid "Overlay"
+msgstr ""
+
+#: data/config.php:431
+msgid "Darken"
+msgstr ""
+
+#: data/config.php:432
+msgid "Lighten"
+msgstr ""
+
+#: data/config.php:433
+msgid "Color Dodge"
+msgstr ""
+
+#: data/config.php:434
+msgid "Saturation"
+msgstr ""
+
+#: data/config.php:436
+msgid "Luminosity"
+msgstr ""
+
+#: data/config.php:448
+msgid "Colors"
+msgstr ""
+
+#: data/config.php:451
+msgid "Default (grey)"
+msgstr ""
+
+#: data/config.php:452
+msgid "White"
+msgstr ""
+
+#: data/config.php:453
+msgid "Black"
+msgstr ""
+
+#: data/config.php:455
+msgid "Tooltips Settings"
+msgstr ""
+
+#: data/config.php:462
+msgid "Enable navbar"
+msgstr ""
+
+#: data/config.php:465 data/config.php:477 data/config.php:488
+#: data/config.php:499 data/config.php:511 data/config.php:522
+#: data/config.php:535 data/config.php:547 data/config.php:558
+msgid "Navbar settings"
+msgstr ""
+
+#: data/config.php:470
+msgid "Display AutoRotate Button "
+msgstr ""
+
+#: data/config.php:481
+msgid "Display Zoom Button "
+msgstr ""
+
+#: data/config.php:492
+msgid "Display Download Button "
+msgstr ""
+
+#: data/config.php:504
+msgid "Display Full Screen Button "
+msgstr ""
+
+#: data/config.php:515
+msgid "Display Markers"
+msgstr ""
+
+#: data/config.php:527
+msgid "Display Gyroscope"
+msgstr ""
+
+#: data/config.php:534
+msgid "Enables the gyroscope navigation if available"
+msgstr ""
+
+#: data/config.php:540
+msgid "Display Caption Text "
+msgstr ""
+
+#: data/config.php:551
+msgid "Custom Caption"
+msgstr ""
+
+#: data/config.php:557
+msgid "Support HTML"
+msgstr ""
+
+#: data/config.php:564
+msgid "Enable cropped"
+msgstr ""
+
+#: data/config.php:567 data/config.php:573 data/config.php:583
+#: data/config.php:593 data/config.php:603 data/config.php:613
+#: data/config.php:623
+msgid "Cropped"
+msgstr ""
+
+#: data/config.php:571
+msgid "Full width"
+msgstr ""
+
+#: data/config.php:581
+msgid "Full height"
+msgstr ""
+
+#: data/config.php:591
+msgid "Cropped width"
+msgstr ""
+
+#: data/config.php:601
+msgid "Cropped height"
+msgstr ""
+
+#: data/config.php:611
+msgid "Cropped X"
+msgstr ""
+
+#: data/config.php:621
+msgid "Cropped Y"
+msgstr ""
+
+#: data/config.php:630
+msgid "Do not know how to use it?"
+msgstr ""
+
+#: data/config.php:632
+msgid "more info"
+msgstr ""
+
+#: data/config.php:642 data/config.php:648 data/config.php:654
+#: data/config.php:661 data/config.php:668 data/config.php:675
+#: data/config.php:682
+msgid "Navbar Tooltips"
+msgstr ""
+
+#: data/config.php:652
+msgid "Zoom out"
+msgstr ""
+
+#: data/config.php:659
+msgid "Zoom In"
+msgstr ""
+
+#: data/config.php:666
+msgid "Download"
+msgstr ""
+
+#: data/config.php:673
+msgid "Fullscreen"
+msgstr ""
+
+#: data/config.php:680
+msgid "Automatic rotation"
+msgstr ""
+
+#: src/functions.php:42
+msgid "Select "
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "360 Photo Viewer for Elementor & WPBakery"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://demo.pro-app.com.ua"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Add 360 images for your website. It works for Elementor and WPBakery."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "elanta"
+msgstr ""

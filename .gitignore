@@ -1,0 +1,5 @@
+.DS_Store
+.idea 
+package-lock.json
+phpcs.xml.dist
+node_modules/*

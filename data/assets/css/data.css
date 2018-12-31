@@ -1,0 +1,65 @@
+
+.elementor .psv-navbar, .elementor .psv-navbar * {
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.ps-el-viewer{
+	position: relative;
+	z-index: 0;
+}
+.ps-el-viewer.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+}
+.psv-loader-canvas{
+	display: none;
+}
+.psv-panel-content * {
+	color: #fff;
+}
+.wpb_content_element{
+	position: relative;
+}
+.psv-marker-product-wrap{
+	text-align: center;
+}
+.psv-marker-product.default{
+	display: inline-block;
+	background: #fff;
+	color: #000;
+	padding: 15px;
+	border-radius: 3px;
+}
+.psv-marker-product.default h1,
+.psv-marker-product.default h2,
+.psv-marker-product.default h3,
+.psv-marker-product.default h4,
+.psv-marker-product.default p{
+	margin: 0;
+}
+.default .psv-marker-product-title,
+.default .psv-marker-product-title a{
+	margin: 0;
+	line-height: 1.2;
+	color: #000;
+}
+.default .psv-marker-product-title{
+	margin: 0;
+	line-height: 1.2;
+}
+.psv-marker-product-price{
+	padding-top: 10px;
+}
+.psv-marker-product-price ins,
+.psv-marker-product-price del{
+	background: none;
+}
+.psv-marker-product.default .woocommerce-Price-amount{
+	padding: 3px 7px;
+	border-radius: 3px;
+	margin-top: 5px;
+	border: 1px solid #000;
+}
