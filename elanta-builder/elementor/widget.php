@@ -2,19 +2,19 @@
 
 namespace Elementor;
 
-use DadBuilders;
+use ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-class DadBuilders_Widget extends Widget_Base {
+class ElantaBuilder_Widget extends Widget_Base {
 
 	/**
-	 * @return DadBuilders\Loader
+	 * @return ElantaBuilder\Loader
 	 */
 	private function loader() {
-		return new DadBuilders\Loader( 'wpbakery', 'elementor' );
+		return new ElantaBuilder\Loader( 'wpbakery', 'elementor' );
 	}
 
 	/**
@@ -48,8 +48,6 @@ class DadBuilders_Widget extends Widget_Base {
 		}
 
 		foreach ( $result_params as $key => $param ) {
-
-
 
 			$this->start_controls_section( $key, [
 				'label' => $key,

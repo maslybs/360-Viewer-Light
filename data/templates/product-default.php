@@ -3,8 +3,12 @@
  * User: elanta https://codecanyon.net/user/elanta/portfolio
  * Date: 27.12.2018
  *
- * @package PVIEWER/ProductTemplate
+ * @package ELANTA_VIEWER/ProductTemplate
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 
 if ( empty( $marker['product_id'] ) ) {
 	return;

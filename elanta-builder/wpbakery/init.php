@@ -1,10 +1,10 @@
 <?php
 
-namespace DadBuilders;
+namespace ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 class initWpbakery {
 
@@ -28,7 +28,7 @@ class initWpbakery {
 			return;
 		}
 
-		$file = DADBUILDERS_PATH . 'wpbakery/widget.php';
+		$file = ELANTA_BUILDER_PATH . 'wpbakery/widget.php';
 		if ( file_exists( $file ) && is_readable( $file ) ) {
 			include_once $file;
 		}
@@ -36,13 +36,13 @@ class initWpbakery {
 		vc_add_shortcode_param( 'slider', array(
 			&$this,
 			'slider',
-		), DADBUILDERS_DATA_URL . '/assets/admin/js/slider.js' );
+		), ELANTA_BUILDER_DATA_URL . '/assets/admin/js/slider.js' );
 
 		vc_add_shortcode_param( '_', function () {
-		}, DADBUILDERS_DATA_URL . '/assets/admin/js/featherlight.js' );
+		}, ELANTA_BUILDER_DATA_URL . '/assets/admin/js/featherlight.js' );
 
 		vc_add_shortcode_param( '_2', function () {
-		}, DADBUILDERS_DATA_URL . '/assets/admin/js/admin-data.js' );
+		}, ELANTA_BUILDER_DATA_URL . '/assets/admin/js/admin-data.js' );
 
 	}
 

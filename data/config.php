@@ -4,43 +4,43 @@
  * Date: 27.12.2018
  * Type: wpbakery
  *
- * @package PVIEWER/Params
+ * @package ELANTA_VIEWER/Params
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-}
+	exit;
+} // Exit if accessed directly
 
 return array(
-	'name'        => __( '360 Viewer Light', '360-viewer-light' ),
-	'description' => __( 'Photo sphere viewer and the beautiful background for Elementor', '360-viewer-light' ),
-	'base'        => 'photo_panorama_el',
+	'name'        => esc_html__( '360 Viewer Light', 'elanta-viewer-light' ),
+	'description' => esc_html__( 'Photo sphere viewer and the beautiful background for Elementor', 'elanta-viewer-light' ),
+	'base'        => 'elenta_viewer_el',
 	'icon'        => 'photo-panorama-el_icon',
-	'category'    => __( 'Content', '360-viewer-light' ),
+	'category'    => esc_html__( 'Content', 'elanta-viewer-light' ),
 	'params'      => array_merge(
-		apply_filters( 'panorama_before_params', array() ),
+		apply_filters( 'elenta_viewer_before_params', array() ),
 		array(
 
 			/* General */
 			array(
 				'type'       => 'attach_image',
-				'heading'    => __( 'Upload Panorama Image', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Upload Panorama Image', 'elanta-viewer-light' ),
 				'param_name' => 'panorama',
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'dropdown',
-				'heading'    => __( 'Height', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Height', 'elanta-viewer-light' ),
 				'param_name' => 'type_height',
 				'value'      => array(
-					__( 'Custom Height', 'creamaps' )          => 'default',
-					__( 'Full height of section', 'creamaps' ) => 'fullheight',
+					esc_html__( 'Custom Height', 'creamaps' )          => 'default',
+					esc_html__( 'Full height of section', 'creamaps' ) => 'fullheight',
 				),
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'        => 'slider',
-				'heading'     => __( 'Custom Height', '360-viewer-light' ),
+				'heading'     => esc_html__( 'Custom Height', 'elanta-viewer-light' ),
 				'param_name'  => 'height',
 				'range'       => [
 					'px' => [
@@ -49,57 +49,57 @@ return array(
 					],
 				],
 				'value'       => '0',
-				'description' => __( 'example: 500', '360-viewer-light' ),
+				'description' => esc_html__( 'example: 500', 'elanta-viewer-light' ),
 				'dependency'  => array(
 					'element' => 'type_height',
 					'value'   => array( 'default' ),
 				),
-				'group'       => __( 'General', '360-viewer-light' ),
+				'group'       => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Panorama as background', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Panorama as background', 'elanta-viewer-light' ),
 				'param_name' => 'as_bg',
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Mousewheel', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Mousewheel', 'elanta-viewer-light' ),
 				'param_name' => 'mousewheel',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
-				'group'      => __( 'General', '360-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Mousemove', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Mousemove', 'elanta-viewer-light' ),
 				'param_name' => 'mousemove',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
-				'group'      => __( 'General', '360-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 				'std'        => 'yes',
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Mousemove Hover', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Mousemove Hover', 'elanta-viewer-light' ),
 				'param_name' => 'mousemove_hover',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'mousemove',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'AutoRotate on Start', '360-viewer-light' ),
+				'heading'     => esc_html__( 'AutoRotate on Start', 'elanta-viewer-light' ),
 				'param_name'  => 'time_anim',
 				'value'       => '',
-				'description' => __( '(msec) If set to 0, auto-rotation will be disabled on start', '360-viewer-light' ),
-				'group'       => __( 'General', '360-viewer-light' ),
+				'description' => esc_html__( '(msec) If set to 0, auto-rotation will be disabled on start', 'elanta-viewer-light' ),
+				'group'       => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'slider',
-				'heading'    => __( 'Rotate speed', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Rotate speed', 'elanta-viewer-light' ),
 				'param_name' => 'anim_speed',
 				'range'      => [
 					'px' => [
@@ -108,29 +108,29 @@ return array(
 						'step' => 0.2,
 					],
 				],
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'dropdown',
-				'heading'    => __( 'Blend mode', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Blend mode', 'elanta-viewer-light' ),
 				'param_name' => 'filter',
 				'value'      => array(
-					__( 'None', '360-viewer-light' )       => '',
-					__( 'Blur', '360-viewer-light' )       => 'blur',
-					__( 'Brightness', '360-viewer-light' ) => 'brightness',
-					__( 'Contrast', '360-viewer-light' )   => 'contrast',
-					__( 'Grayscale', '360-viewer-light' )  => 'grayscale',
-					__( 'Hue-rotate', '360-viewer-light' ) => 'hue-rotate',
-					__( 'Invert', '360-viewer-light' )     => 'invert',
-					__( 'Opacity', '360-viewer-light' )    => 'opacity',
-					__( 'Saturate', '360-viewer-light' )   => 'saturate',
-					__( 'Sepia', '360-viewer-light' )      => 'sepia',
+					esc_html__( 'None', 'elanta-viewer-light' )       => '',
+					esc_html__( 'Blur', 'elanta-viewer-light' )       => 'blur',
+					esc_html__( 'Brightness', 'elanta-viewer-light' ) => 'brightness',
+					esc_html__( 'Contrast', 'elanta-viewer-light' )   => 'contrast',
+					esc_html__( 'Grayscale', 'elanta-viewer-light' )  => 'grayscale',
+					esc_html__( 'Hue-rotate', 'elanta-viewer-light' ) => 'hue-rotate',
+					esc_html__( 'Invert', 'elanta-viewer-light' )     => 'invert',
+					esc_html__( 'Opacity', 'elanta-viewer-light' )    => 'opacity',
+					esc_html__( 'Saturate', 'elanta-viewer-light' )   => 'saturate',
+					esc_html__( 'Sepia', 'elanta-viewer-light' )      => 'sepia',
 				),
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'slider',
-				'heading'    => __( 'Filter value', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Filter value', 'elanta-viewer-light' ),
 				'param_name' => 'filter_value',
 				'range'      => [
 					'px' => [
@@ -154,11 +154,11 @@ return array(
 						'sepia',
 					),
 				),
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'        => 'slider',
-				'heading'     => __( 'Zoom', '360-viewer-light' ),
+				'heading'     => esc_html__( 'Zoom', 'elanta-viewer-light' ),
 				'param_name'  => 'default_fov',
 				'value'       => '45',
 				'range'       => [
@@ -168,28 +168,28 @@ return array(
 						'step' => 1,
 					],
 				],
-				'group'       => __( 'General', '360-viewer-light' ),
-				'description' => __( 'It sets zoom of image by default.', '360-viewer-light' ),
+				'group'       => esc_html__( 'General', 'elanta-viewer-light' ),
+				'description' => esc_html__( 'It sets zoom of image by default.', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Loading text', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Loading text', 'elanta-viewer-light' ),
 				'param_name' => 'loading_txt',
 				'std'        => 'Loading...',
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Show loading image', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Show loading image', 'elanta-viewer-light' ),
 				'param_name' => 'show_loading_img',
-				'group'      => __( 'General', '360-viewer-light' ),
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 			),
 			array(
 				'type'       => 'attach_image',
-				'heading'    => __( 'Loading image', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Loading image', 'elanta-viewer-light' ),
 				'param_name' => 'loading_img_file',
-				'group'      => __( 'General', '360-viewer-light' ),
+				'group'      => esc_html__( 'General', 'elanta-viewer-light' ),
 				'dependency' => array(
 					'element' => 'show_loading_img',
 					'value'   => array( 'yes' ),
@@ -200,14 +200,14 @@ return array(
 			/* Markers */
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Enable markers ', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Enable markers ', 'elanta-viewer-light' ),
 				'param_name' => 'enable_marker',
-				'group'      => __( 'Markers', '360-viewer-light' ),
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'Markers', 'elanta-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 			),
 			array(
 				'type'       => 'param_group',
-				'heading'    => __( 'Markers', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Markers', 'elanta-viewer-light' ),
 				'param_name' => 'markers',
 				'group'      => 'Markers',
 				'dependency' => array(
@@ -217,31 +217,31 @@ return array(
 				'params'     => array(
 					array(
 						'type'        => 'dropdown',
-						'heading'     => __( 'Marker Type', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Marker Type', 'elanta-viewer-light' ),
 						'param_name'  => 'type_marker',
 						'value'       => array(
-							__( 'Default (image)', '360-viewer-light' ) => '',
-							__( 'Circle', '360-viewer-light' )          => 'circle',
-							__( 'Post', '360-viewer-light' )            => 'html',
-							__( 'Product', '360-viewer-light' )         => 'product',
+							esc_html__( 'Default (image)', 'elanta-viewer-light' ) => 'false',
+							esc_html__( 'Circle', 'elanta-viewer-light' )          => 'circle',
+							esc_html__( 'Post', 'elanta-viewer-light' )            => 'html',
+							esc_html__( 'Product', 'elanta-viewer-light' )         => 'product',
 						),
-						'description' => __( 'Notice! Post and Product types support a custom template', '360-viewer-light' ),
+						'description' => esc_html__( 'Notice! Post and Product types support a custom template', 'elanta-viewer-light' ),
 					),
 
 					array(
 						'type'       => 'dropdown',
-						'heading'    => __( 'Marker Action', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Marker Action', 'elanta-viewer-light' ),
 						'param_name' => 'marker_action',
 						'value'      => array(
-							__( 'Default (open modal)', '360-viewer-light' )    => '',
-							__( 'Custom URL', '360-viewer-light' )              => 'url',
-							__( 'Go to product (inherit)', '360-viewer-light' ) => 'product',
+							esc_html__( 'Default (open modal)', 'elanta-viewer-light' )    => 'false',
+							esc_html__( 'Custom URL', 'elanta-viewer-light' )              => 'url',
+							esc_html__( 'Go to product (inherit)', 'elanta-viewer-light' ) => 'product',
 						),
 					),
 
 					array(
 						'type'       => 'vc_link',
-						'heading'    => __( 'Marker Custom URL', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Marker Custom URL', 'elanta-viewer-light' ),
 						'param_name' => 'marker_action_url',
 						'value'      => '',
 						'dependency' => array(
@@ -252,10 +252,10 @@ return array(
 
 					array(
 						'type'        => 'textfield',
-						'heading'     => __( 'Circle Radius', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Circle Radius', 'elanta-viewer-light' ),
 						'param_name'  => 'circle',
 						'value'       => '20',
-						'description' => __( 'example: 20', '360-viewer-light' ),
+						'description' => esc_html__( 'example: 20', 'elanta-viewer-light' ),
 						'dependency'  => array(
 							'element' => 'type_marker',
 							'value'   => array( 'circle' ),
@@ -264,7 +264,7 @@ return array(
 
 					array(
 						'type'       => 'colorpicker',
-						'heading'    => __( 'Circle Color', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Circle Color', 'elanta-viewer-light' ),
 						'param_name' => 'fill',
 						'dependency' => array(
 							'element' => 'type_marker',
@@ -274,100 +274,100 @@ return array(
 
 					array(
 						'type'        => 'dropdown',
-						'heading'     => __( 'Select Post', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Select Post', 'elanta-viewer-light' ),
 						'param_name'  => 'post_id',
-						'value'       => panorama_dropdown( 'post', 100, true ),
-						'std'         => __( 'Select post', '360-viewer-light' ),
+						'value'       => elanta_viewer_dropdown( 'post', 100, true ),
+						'std'         => esc_html__( 'Select post', 'elanta-viewer-light' ),
 						'dependency'  => array(
 							'element' => 'type_marker',
 							'value'   => array( 'html' ),
 						),
-						'description' => __( 'Select post which you want to show instead of the marker.', '360-viewer-light' ),
+						'description' => esc_html__( 'Select post which you want to show instead of the marker.', 'elanta-viewer-light' ),
 					),
 					array(
 						'type'        => 'dropdown',
-						'heading'     => __( 'Select Product', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Select Product', 'elanta-viewer-light' ),
 						'param_name'  => 'product_id',
-						'value'       => panorama_dropdown( 'product', 100, true ),
-						'std'         => __( 'Select product', '360-viewer-light' ),
+						'value'       => elanta_viewer_dropdown( 'product', 100, true ),
+						'std'         => esc_html__( 'Select product', 'elanta-viewer-light' ),
 						'dependency'  => array(
 							'element' => 'type_marker',
 							'value'   => array( 'product' ),
 						),
-						'description' => __( 'Select product which you want to show instead of the marker.', '360-viewer-light' ),
+						'description' => esc_html__( 'Select product which you want to show instead of the marker.', 'elanta-viewer-light' ),
 					),
 					array(
 						'type'       => 'attach_image',
 						'class'      => '',
-						'heading'    => __( 'Upload Image Marker', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Upload Image Marker', 'elanta-viewer-light' ),
 						'param_name' => 'image',
 						'dependency' => array(
 							'element' => 'type_marker',
-							'value'   => array( '' ),
+							'value'   => array('false'),
 						),
 					),
 					array(
 						'type'        => 'textfield',
-						'heading'     => __( 'Add Marker Coordinates', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Add Marker Coordinates', 'elanta-viewer-light' ),
 						'param_name'  => 'add_coordinate',
 						'std'         => 'Please click here',
 						'value'       => '',
 						'dependency'  => array(
 							'element' => 'type_marker',
-							'value'   => array( '', 'html', 'product', 'circle' ),
+							'value'   => array( 'false', 'html', 'product', 'circle' ),
 						),
-						'description' => __( 'Marker coordinates on the image. Don’t forget to fill  Show in Scene param. Otherwise, you can add the marker to the first scene only.', '360-viewer-light' ),
+						'description' => esc_html__( 'Marker coordinates on the image. Don’t forget to fill  Show in Scene param. Otherwise, you can add the marker to the first scene only.', 'elanta-viewer-light' ),
 					),
 					array(
 						'type'        => 'textfield',
-						'heading'     => __( 'Custom Tooltip', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Custom Tooltip', 'elanta-viewer-light' ),
 						'param_name'  => 'tooltip',
 						'dependency'  => array(
 							'element' => 'type_marker',
-							'value'   => array( '', 'html', 'product', 'circle' ),
+							'value'   => array( 'false', 'html', 'product', 'circle' ),
 						),
-						'description' => __( 'Tooltip appears when hovering cursor.', '360-viewer-light' ),
+						'description' => esc_html__( 'Tooltip appears when hovering cursor.', 'elanta-viewer-light' ),
 					),
 					array(
 						'type'        => 'textarea',
-						'heading'     => __( 'Content', '360-viewer-light' ),
+						'heading'     => esc_html__( 'Content', 'elanta-viewer-light' ),
 						'param_name'  => 'content',
 						'admin_label' => true,
 						'dependency'  => array(
 							'element' => 'marker_action',
-							'value'   => array( '' ),
+							'value'   => array( 'false' ),
 						),
-						'description' => __( 'It adds a custom content to an overlay window. This window opens when you click on the marker.', '360-viewer-light' ),
+						'description' => esc_html__( 'It adds a custom content to an overlay window. This window opens when you click on the marker.', 'elanta-viewer-light' ),
 					),
 					array(
 						'type'       => 'textfield',
-						'heading'    => __( 'Marker Max Width', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Marker Max Width', 'elanta-viewer-light' ),
 						'param_name' => 'width',
 						'std'        => '32',
 						'dependency' => array(
 							'element' => 'type_marker',
-							'value'   => array( '', 'html', 'product' ),
+							'value'   => array( 'false', 'html', 'product' ),
 						),
 
 					),
 					array(
 						'type'       => 'textfield',
-						'heading'    => __( 'Marker Max Hight', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Marker Max Hight', 'elanta-viewer-light' ),
 						'param_name' => 'height',
 						'std'        => '32',
 						'dependency' => array(
 							'element' => 'type_marker',
-							'value'   => array( '', 'html', 'product' ),
+							'value'   => array( 'false', 'html', 'product' ),
 						),
 					),
 					array(
 						'type'       => 'hidden',
-						'heading'    => __( 'Longitude', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Longitude', 'elanta-viewer-light' ),
 						'param_name' => 'longitude',
 					),
 					array(
 						'type'       => 'hidden',
-						'heading'    => __( 'Latitude', '360-viewer-light' ),
+						'heading'    => esc_html__( 'Latitude', 'elanta-viewer-light' ),
 						'param_name' => 'latitude',
 					),
 
@@ -377,34 +377,34 @@ return array(
 			/* Background Overlay */
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Enable Overlay', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Enable Overlay', 'elanta-viewer-light' ),
 				'param_name' => 'enable_overlay',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
-				'group'      => __( 'Background Overlay', '360-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'Background Overlay', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'colorpicker',
-				'heading'    => __( 'Color', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Color', 'elanta-viewer-light' ),
 				'param_name' => 'overlay_color',
 				'dependency' => array(
 					'element' => 'enable_overlay',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Background Overlay', '360-viewer-light' ),
+				'group'      => esc_html__( 'Background Overlay', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'attach_image',
-				'heading'    => __( 'Image', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Image', 'elanta-viewer-light' ),
 				'param_name' => 'overlay_image',
 				'dependency' => array(
 					'element' => 'enable_overlay',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Background Overlay', '360-viewer-light' ),
+				'group'      => esc_html__( 'Background Overlay', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'slider',
-				'heading'    => __( 'Opacity', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Opacity', 'elanta-viewer-light' ),
 				'param_name' => 'overlay_opacity',
 				'dependency' => array(
 					'element' => 'enable_overlay',
@@ -417,160 +417,160 @@ return array(
 						'step' => 0.01,
 					],
 				],
-				'group'      => __( 'Background Overlay', '360-viewer-light' ),
+				'group'      => esc_html__( 'Background Overlay', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'dropdown',
-				'heading'    => __( 'Blend mode', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Blend mode', 'elanta-viewer-light' ),
 				'param_name' => 'overlay_blend',
 				'value'      => array(
-					__( 'Normal', '360-viewer-light' )      => '',
-					__( 'Multiply', '360-viewer-light' )    => 'multiply',
-					__( 'Screen', '360-viewer-light' )      => 'screen',
-					__( 'Overlay', '360-viewer-light' )     => 'overlay',
-					__( 'Darken', '360-viewer-light' )      => 'darken',
-					__( 'Lighten', '360-viewer-light' )     => 'lighten',
-					__( 'Color Dodge', '360-viewer-light' ) => 'color-dodge',
-					__( 'Saturation', '360-viewer-light' )  => 'saturation',
-					__( 'Color', '360-viewer-light' )       => 'color',
-					__( 'Luminosity', '360-viewer-light' )  => 'luminosity',
+					esc_html__( 'Normal', 'elanta-viewer-light' )      => '',
+					esc_html__( 'Multiply', 'elanta-viewer-light' )    => 'multiply',
+					esc_html__( 'Screen', 'elanta-viewer-light' )      => 'screen',
+					esc_html__( 'Overlay', 'elanta-viewer-light' )     => 'overlay',
+					esc_html__( 'Darken', 'elanta-viewer-light' )      => 'darken',
+					esc_html__( 'Lighten', 'elanta-viewer-light' )     => 'lighten',
+					esc_html__( 'Color Dodge', 'elanta-viewer-light' ) => 'color-dodge',
+					esc_html__( 'Saturation', 'elanta-viewer-light' )  => 'saturation',
+					esc_html__( 'Color', 'elanta-viewer-light' )       => 'color',
+					esc_html__( 'Luminosity', 'elanta-viewer-light' )  => 'luminosity',
 				),
 				'dependency' => array(
 					'element' => 'enable_overlay',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Background Overlay', '360-viewer-light' ),
+				'group'      => esc_html__( 'Background Overlay', 'elanta-viewer-light' ),
 			),
 
 
 			array(
 				'type'       => 'dropdown',
-				'heading'    => __( 'Colors', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Colors', 'elanta-viewer-light' ),
 				'param_name' => 'style_tooltips',
 				'value'      => array(
-					__( 'Default (grey)', '360-viewer-light' ) => '',
-					__( 'White', '360-viewer-light' )          => 'white',
-					__( 'Black', '360-viewer-light' )          => 'black',
+					esc_html__( 'Default (grey)', 'elanta-viewer-light' ) => '',
+					esc_html__( 'White', 'elanta-viewer-light' )          => 'white',
+					esc_html__( 'Black', 'elanta-viewer-light' )          => 'black',
 				),
-				'group'      => __( 'Tooltips Settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Tooltips Settings', 'elanta-viewer-light' ),
 			),
 
 
 			/* Navbar settings */
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Enable navbar', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Enable navbar', 'elanta-viewer-light' ),
 				'param_name' => 'navbar_enable',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Display AutoRotate Button ', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Display AutoRotate Button ', 'elanta-viewer-light' ),
 				'param_name' => 'autorotate',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Display Zoom Button ', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Display Zoom Button ', 'elanta-viewer-light' ),
 				'param_name' => 'zoom',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Display Download Button ', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Display Download Button ', 'elanta-viewer-light' ),
 				'param_name' => 'download',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Display Full Screen Button ', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Display Full Screen Button ', 'elanta-viewer-light' ),
 				'param_name' => 'fullscreen',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Display Markers', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Display Markers', 'elanta-viewer-light' ),
 				'param_name' => 'display_markers',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 
 			array(
 				'type'        => 'checkbox',
-				'heading'     => __( 'Display Gyroscope', '360-viewer-light' ),
+				'heading'     => esc_html__( 'Display Gyroscope', 'elanta-viewer-light' ),
 				'param_name'  => 'display_gyroscope',
-				'value'       => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'       => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency'  => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'description' => __( 'Enables the gyroscope navigation if available', '360-viewer-light' ),
-				'group'       => __( 'Navbar settings', '360-viewer-light' ),
+				'description' => esc_html__( 'Enables the gyroscope navigation if available', 'elanta-viewer-light' ),
+				'group'       => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Display Caption Text ', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Display Caption Text ', 'elanta-viewer-light' ),
 				'param_name' => 'display_caption',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
 				'dependency' => array(
 					'element' => 'navbar_enable',
 					'value'   => array( 'yes' ),
 				),
-				'group'      => __( 'Navbar settings', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'        => 'textarea',
-				'heading'     => __( 'Custom Caption', '360-viewer-light' ),
+				'heading'     => esc_html__( 'Custom Caption', 'elanta-viewer-light' ),
 				'param_name'  => 'caption',
 				'dependency'  => array(
 					'element' => 'display_caption',
 					'value'   => array( 'yes' ),
 				),
-				'description' => __( 'Support HTML', '360-viewer-light' ),
-				'group'       => __( 'Navbar settings', '360-viewer-light' ),
+				'description' => esc_html__( 'Support HTML', 'elanta-viewer-light' ),
+				'group'       => esc_html__( 'Navbar settings', 'elanta-viewer-light' ),
 			),
 
 			/* Cropped */
 			array(
 				'type'       => 'checkbox',
-				'heading'    => __( 'Enable cropped', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Enable cropped', 'elanta-viewer-light' ),
 				'param_name' => 'enable_cropped',
-				'value'      => array( __( 'Yes, please', '360-viewer-light' ) => 'yes' ),
-				'group'      => __( 'Cropped', '360-viewer-light' ),
+				'value'      => array( esc_html__( 'Yes, please', 'elanta-viewer-light' ) => 'yes' ),
+				'group'      => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Full width', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Full width', 'elanta-viewer-light' ),
 				'param_name' => 'full_width',
-				'group'      => __( 'Cropped', '360-viewer-light' ),
+				'group'      => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 				'dependency' => array(
 					'element' => 'enable_cropped',
 					'value'   => array( 'yes' ),
@@ -578,9 +578,9 @@ return array(
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Full height', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Full height', 'elanta-viewer-light' ),
 				'param_name' => 'full_height',
-				'group'      => __( 'Cropped', '360-viewer-light' ),
+				'group'      => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 				'dependency' => array(
 					'element' => 'enable_cropped',
 					'value'   => array( 'yes' ),
@@ -588,9 +588,9 @@ return array(
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Cropped width', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Cropped width', 'elanta-viewer-light' ),
 				'param_name' => 'cropped_width',
-				'group'      => __( 'Cropped', '360-viewer-light' ),
+				'group'      => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 				'dependency' => array(
 					'element' => 'enable_cropped',
 					'value'   => array( 'yes' ),
@@ -598,9 +598,9 @@ return array(
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Cropped height', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Cropped height', 'elanta-viewer-light' ),
 				'param_name' => 'cropped_height',
-				'group'      => __( 'Cropped', '360-viewer-light' ),
+				'group'      => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 				'dependency' => array(
 					'element' => 'enable_cropped',
 					'value'   => array( 'yes' ),
@@ -608,9 +608,9 @@ return array(
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Cropped X', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Cropped X', 'elanta-viewer-light' ),
 				'param_name' => 'cropped_x',
-				'group'      => __( 'Cropped', '360-viewer-light' ),
+				'group'      => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 				'dependency' => array(
 					'element' => 'enable_cropped',
 					'value'   => array( 'yes' ),
@@ -618,18 +618,18 @@ return array(
 			),
 			array(
 				'type'        => 'textfield',
-				'heading'     => __( 'Cropped Y', '360-viewer-light' ),
+				'heading'     => esc_html__( 'Cropped Y', 'elanta-viewer-light' ),
 				'param_name'  => 'cropped_y',
-				'group'       => __( 'Cropped', '360-viewer-light' ),
+				'group'       => esc_html__( 'Cropped', 'elanta-viewer-light' ),
 				'dependency'  => array(
 					'element' => 'enable_cropped',
 					'value'   => array( 'yes' ),
 				),
 				'description' => sprintf(
 					'%s <a href="%s">%s</a>',
-					esc_html__( 'Do not know how to use it?', '360-viewer-light' ),
+					esc_html__( 'Do not know how to use it?', 'elanta-viewer-light' ),
 					esc_url( 'https://photo-sphere-viewer.js.org/crop.html' ),
-					esc_html__( 'more info', '360-viewer-light' )
+					esc_html__( 'more info', 'elanta-viewer-light' )
 				),
 			),
 
@@ -637,55 +637,55 @@ return array(
 			/* Navbar Tooltips */
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Markers', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Markers', 'elanta-viewer-light' ),
 				'param_name' => 'label_markers',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Zoom', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Zoom', 'elanta-viewer-light' ),
 				'param_name' => 'label_zoom',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Zoom out', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Zoom out', 'elanta-viewer-light' ),
 				'param_name' => 'label_zoomOut',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Zoom In', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Zoom In', 'elanta-viewer-light' ),
 				'param_name' => 'label_zoomIn',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Download', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Download', 'elanta-viewer-light' ),
 				'param_name' => 'label_download',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Fullscreen', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Fullscreen', 'elanta-viewer-light' ),
 				'param_name' => 'label_fullscreen',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 
 			),
 			array(
 				'type'       => 'textfield',
-				'heading'    => __( 'Automatic rotation', '360-viewer-light' ),
+				'heading'    => esc_html__( 'Automatic rotation', 'elanta-viewer-light' ),
 				'param_name' => 'label_autorotate',
-				'group'      => __( 'Navbar Tooltips', '360-viewer-light' ),
+				'group'      => esc_html__( 'Navbar Tooltips', 'elanta-viewer-light' ),
 
 			),
 
 		),
 		apply_filters(
-			'panorama_after_params',
+			'elenta_viewer_after_params',
 			array()
 		)
 	), // End all params.

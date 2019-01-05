@@ -3,14 +3,14 @@
  * User: elanta https://codecanyon.net/user/elanta/portfolio
  * Date: 27.12.2018
  *
- * @package PVIEWER/Functions
+ * @package ELANTA_VIEWER/Functions
  */
 
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 
-if ( ! function_exists( 'panorama_dropdown' ) ) {
+if ( ! function_exists( 'elanta_viewer_dropdown' ) ) {
 	/**
 	 * Return array of posts for dropdown.
 	 *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'panorama_dropdown' ) ) {
 	 *
 	 * @return array
 	 */
-	function panorama_dropdown( $post_type = 'post', $limit = 100, $show_first = false ) {
+	function elanta_viewer_dropdown( $post_type = 'post', $limit = 100, $show_first = false ) {
 
 		// Get posts.
 		$posts = get_posts(
@@ -39,7 +39,7 @@ if ( ! function_exists( 'panorama_dropdown' ) ) {
 		}
 
 		if ( $show_first ) {
-			$options[ __( 'Select ', '360-viewer-light' ) . $post_type ] = '';
+			$options[ esc_html__( 'Select ', 'elanta-viewer-light' ) . $post_type ] = '';
 		}
 		foreach ( $posts as $post ) {
 			$options[ esc_html( $post->post_title ) ] = esc_html( $post->ID );
@@ -49,7 +49,7 @@ if ( ! function_exists( 'panorama_dropdown' ) ) {
 	}
 }
 
-if ( ! function_exists( 'panorama_get_image_url' ) ) {
+if ( ! function_exists( 'elanta_viewer_get_image_url' ) ) {
 	/**
 	 * Gets image url.
 	 *
@@ -60,7 +60,7 @@ if ( ! function_exists( 'panorama_get_image_url' ) ) {
 	 *
 	 * @return false|string
 	 */
-	function panorama_get_image_url( $param, $key, $size = 'full', $default = '' ) {
+	function elanta_viewer_get_image_url( $param, $key, $size = 'full', $default = '' ) {
 		if ( ! empty( $param[ $key ] ) ) {
 			if ( ! empty( $param[ $key ]['url'] ) ) {
 				$param = $param[ $key ]['url'];
@@ -76,7 +76,7 @@ if ( ! function_exists( 'panorama_get_image_url' ) ) {
 }
 
 
-if ( ! function_exists( 'panorama_get_range_value' ) ) {
+if ( ! function_exists( 'elanta_viewer_get_range_value' ) ) {
 	/**
 	 * Get value from range field.
 	 *
@@ -87,7 +87,7 @@ if ( ! function_exists( 'panorama_get_range_value' ) ) {
 	 *
 	 * @return string
 	 */
-	function panorama_get_range_value( $param, $key, $default = '', $type = '' ) {
+	function elanta_viewer_get_range_value( $param, $key, $default = '', $type = '' ) {
 
 		if ( empty( $param[ $key ] ) ) {
 			return $default;
@@ -105,7 +105,7 @@ if ( ! function_exists( 'panorama_get_range_value' ) ) {
 	}
 }
 
-if ( ! function_exists( 'panorama_convert_bool' ) ) {
+if ( ! function_exists( 'elanta_viewer_convert_bool' ) ) {
 
 	/**
 	 * The function converts all params with "yes" or "no" to boolean.
@@ -114,7 +114,7 @@ if ( ! function_exists( 'panorama_convert_bool' ) ) {
 	 *
 	 * @return array
 	 */
-	function panorama_convert_bool( $atts ) {
+	function elanta_viewer_convert_bool( $atts ) {
 
 		if ( ! is_array( $atts ) ) {
 			return $atts;

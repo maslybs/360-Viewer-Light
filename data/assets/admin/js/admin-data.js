@@ -125,7 +125,7 @@ PSV_ADMIN_PANORAMA.openModalCoordinates = function (_this, panel, model, view) {
 
 			var iframe = $('#elementor-preview-iframe').get(0),
 					iframewindow = iframe.contentWindow ? iframe.contentWindow : iframe.contentDocument.defaultView,
-					PSV_VIEWER = iframewindow.PSV_VIEWERS[$viewer.attr('id')],
+					PSV_VIEWER = iframewindow.ELANTA_VIEWERS[$viewer.attr('id')],
 					scenes = PSV_VIEWER.config.virtual_tour;
 
 			let id = $row.find('.elementor-control-show_in_scene input').val();
@@ -179,7 +179,7 @@ PSV_ADMIN_PANORAMA.switcherEvents = function (view) {
 
 		var iframe = $('#elementor-preview-iframe').get(0),
 				iframewindow = iframe.contentWindow ? iframe.contentWindow : iframe.contentDocument.defaultView,
-				psv_core = iframewindow.PSV_VIEWERS[container_id],
+				psv_core = iframewindow.ELANTA_VIEWERS[container_id],
 				tours = Object.assign([], psv_core.config.virtual_tour),
 				scene_id = $(this).data('id');
 
@@ -247,13 +247,13 @@ PSV_ADMIN_PANORAMA.initElementorHooks = function () {
 
 		elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
 
-			if (model.get('widgetType') !== 'photo_panorama_el') {
+			if (model.get('widgetType') !== 'elenta_viewer_el') {
 				panel.$el.find('#' + _parent.footerPanelID).hide();
 			}
 		});
 
 
-		elementor.hooks.addAction('panel/open_editor/widget/photo_panorama_el', function (panel, model, view) {
+		elementor.hooks.addAction('panel/open_editor/widget/elenta_viewer_el', function (panel, model, view) {
 
 
 			view.on('render', function () {

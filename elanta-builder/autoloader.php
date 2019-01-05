@@ -1,10 +1,10 @@
 <?php
 
-namespace DadBuilders;
+namespace ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+} // Exit if accessed directly
 
 class Autoloader {
 
@@ -38,7 +38,7 @@ class Autoloader {
 	 */
 	private static function load_class( $relative_class_name ) {
 		if ( isset( self::$classes_map[ $relative_class_name ] ) ) {
-			$filename = DADBUILDERS_PATH . '/' . self::$classes_map[ $relative_class_name ];
+			$filename = ELANTA_BUILDER_PATH . '/' . self::$classes_map[ $relative_class_name ];
 		} else {
 			$filename = strtolower( preg_replace( [ '/([a-z])([A-Z])/', '/_/', '/\\\/' ], [
 				'$1-$2',
@@ -46,7 +46,7 @@ class Autoloader {
 				DIRECTORY_SEPARATOR,
 			], $relative_class_name ) );
 
-			$filename = DADBUILDERS_PATH . $filename . '.php';
+			$filename = ELANTA_BUILDER_PATH . $filename . '.php';
 		}
 
 		if ( is_readable( $filename ) ) {

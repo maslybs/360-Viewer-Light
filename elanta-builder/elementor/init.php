@@ -1,12 +1,12 @@
 <?php
 
-namespace DadBuilders;
+namespace ElantaBuilder;
 
 use Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 class initElementor {
 
@@ -31,12 +31,12 @@ class initElementor {
 		// We check if the Elementor plugin has been installed / activated.
 		if ( defined( 'ELEMENTOR_PATH' ) && class_exists( 'Elementor\Widget_Base' ) ) {
 
-			$file = DADBUILDERS_PATH . 'elementor/widget.php';
+			$file = ELANTA_BUILDER_PATH . 'elementor/widget.php';
 
 			if ( file_exists( $file ) && is_readable( $file ) ) {
 				include_once $file;
 
-				$widget = new Elementor\DadBuilders_Widget();
+				$widget = new Elementor\ElantaBuilder_Widget();
 				$widgets_manager->register_widget_type( $widget );
 
 			}

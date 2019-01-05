@@ -6,30 +6,34 @@
  * Author: elantawp
  * Author URI: https://profiles.wordpress.org/elantawp
  * Version: 1.0.0
- * Text Domain: 360-viewer-light
+ * Text Domain: elanta-viewer-light
  *
- * @package PVIEWER
+ * @package ELANTA_VIEWER
  */
 
 // If this file is accessed directory, then abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+} // Exit if accessed directly
 
-define( 'PVR_PATH', dirname( __FILE__ ) . '/' );
-define( 'PVR_URL', plugin_dir_url( __FILE__ ) );
+define( 'ELANTA_VIEWER_PATH', dirname( __FILE__ ) . '/' );
+define( 'ELANTA_VIEWER_URL', plugin_dir_url( __FILE__ ) );
 
 /*
  * Include core.
  */
-require PVR_PATH . 'dad-builders/core.php';
+if ( ! class_exists( 'ElantaBuilder\\Core' ) ) {
+	require ELANTA_VIEWER_PATH . 'elanta-builder/core.php';
+}
 
 /*
  * Include additional functions.
  */
-require PVR_PATH . 'src/functions.php';
+require ELANTA_VIEWER_PATH . 'src/functions.php';
 
 /*
  * Include core of plugin
  */
-require PVR_PATH . 'src/core.php';
+if ( ! class_exists( 'ElantaViewerCore\\Core' ) ) {
+	require ELANTA_VIEWER_PATH . 'src/core.php';
+}

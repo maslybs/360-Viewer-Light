@@ -1,10 +1,10 @@
 <?php
 
-namespace DadBuilders;
+namespace ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 class Parse {
 
@@ -22,7 +22,7 @@ class Parse {
 			return null;
 		}
 
-		$file = apply_filters( 'dadBuilders/parse/path', $args['file'] );
+		$file = apply_filters( 'ElantaBuilder/parse/path', $args['file'] );
 
 		if ( $file && file_exists( $file ) && is_readable( $file ) ) {
 

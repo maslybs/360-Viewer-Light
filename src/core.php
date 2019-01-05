@@ -3,14 +3,14 @@
  * User: elanta https://codecanyon.net/user/elanta/portfolio
  * Date: 27.12.2018
  *
- * @package PVIEWER/Core
+ * @package ELANTA_VIEWER/Core
  */
 
-namespace PViewerCore;
+namespace ElantaViewerCore;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 /**
  * Class Core of Plugin.
@@ -40,11 +40,11 @@ class Core {
 			self::$instance = new self();
 
 			/**
-			 * PViewerCore loaded.
+			 * ElantaViewerCore loaded.
 			 *
 			 * @since 1.0.0
 			 */
-			do_action( 'panorama_viewer_loaded' );
+			do_action( 'elantaBuilder_viewer_loaded' );
 		}
 
 		return self::$instance;
@@ -94,12 +94,12 @@ class Core {
 		$loader->register();
 
 		// Register the base directories for the namespace prefix.
-		$loader->add_namespace( 'PViewerCore', PVR_PATH . 'src' );
+		$loader->add_namespace( 'ElantaViewerCore', ELANTA_VIEWER_PATH . 'src' );
 
 	}
 
 	/**
-	 * Init PViewerCore components.
+	 * Init ElantaViewerCore components.
 	 *
 	 * @since  1.0.0
 	 * @access private
@@ -111,11 +111,11 @@ class Core {
 		$enqueue->init();
 
 		/**
-		 * PViewerCore init.
+		 * ElantaViewerCore init.
 		 *
 		 * @since 1.0.0
 		 */
-		do_action( 'panorama_viewer_init' );
+		do_action( 'elantaBuilder_viewer_init' );
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Core {
 	 * @return void
 	 */
 	public static function load_translations() {
-		load_plugin_textdomain( '360-viewer-light', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'elanta-viewer-light', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 
 

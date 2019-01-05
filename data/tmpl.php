@@ -4,24 +4,23 @@
  * Date: 27.12.2018
  * Type: wpbakery
  *
- * @package PVIEWER/Params
+ * @package ELANTA_VIEWER/Params
  * $atts - here all params of plugin.
  */
 
-// Get panorama image.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 
-$atts = apply_filters( 'panorama_init_atts', $atts );
+$atts = apply_filters( 'elanta_viewer_init_atts', $atts );
 
 $atts['container_id'] = uniqid();
 
 
-$atts['panorama'] = panorama_get_image_url( $atts, 'panorama' );
+$atts['panorama'] = elanta_viewer_get_image_url( $atts, 'panorama' );
 
 if ( ! empty( $atts['show_loading_img'] ) && ! empty( $atts['loading_img_file'] ) ) {
-	$atts['loading_img'] = panorama_get_image_url( $atts, 'loading_img_file', 'thumbnail', '' );
+	$atts['loading_img'] = elanta_viewer_get_image_url( $atts, 'loading_img_file', 'thumbnail', '' );
 }
 
 
@@ -30,7 +29,7 @@ if ( empty( $atts['display_caption'] ) && isset( $atts['caption'] ) ) {
 }
 
 // Set height.
-$atts['size']['height'] = panorama_get_range_value( $atts, 'height', '500' );
+$atts['size']['height'] = elanta_viewer_get_range_value( $atts, 'height', '500' );
 unset( $atts['height'] );
 
 if ( empty( $atts['time_anim'] ) ) {
@@ -38,7 +37,7 @@ if ( empty( $atts['time_anim'] ) ) {
 }
 
 // Set anim_speed.
-$atts['anim_speed'] = panorama_get_range_value(
+$atts['anim_speed'] = elanta_viewer_get_range_value(
 	$atts,
 	'anim_speed',
 	'1rpm',
@@ -163,8 +162,8 @@ if ( empty( $atts['enable_marker'] ) ) {
 						$marker['product_id'] = $marker['post_id'];
 
 						ob_start();
-						$product_template = DADBUILDERS_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
-						require apply_filters( 'panorama_marker_template', $product_template, $marker );
+						$product_template = ELANTA_BUILDER_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
+						require apply_filters( 'elanta_viewer_marker_template', $product_template, $marker );
 						$html = ob_get_clean();
 					}
 
@@ -230,8 +229,8 @@ if ( empty( $atts['enable_marker'] ) ) {
 							$template = $marker['template'];
 						}
 						ob_start();
-						$product_template = DADBUILDERS_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
-						require apply_filters( 'panorama_marker_template', $product_template, $marker );
+						$product_template = ELANTA_BUILDER_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
+						require apply_filters( 'elanta_viewer_marker_template', $product_template, $marker );
 						$html = ob_get_clean();
 					}
 
@@ -330,7 +329,7 @@ if ( ! empty( $atts['navbar_enable'] ) ) {
 }
 
 
-$atts = panorama_convert_bool( $atts );
+$atts = elanta_viewer_convert_bool( $atts );
 
 $bool_params = array(
 	'as_bg',
@@ -393,10 +392,10 @@ if ( ! empty( $atts['enable_overlay'] ) ) {
 	}
 
 	if ( ! empty( $atts['overlay_image'] ) ) {
-		$css_overlay[] = 'background-image:url(' . panorama_get_image_url( $atts, 'overlay_image' ) . ')';
+		$css_overlay[] = 'background-image:url(' . elanta_viewer_get_image_url( $atts, 'overlay_image' ) . ')';
 	}
 	// Set overlay opacity.
-	$css_overlay[] = 'opacity:' . panorama_get_range_value( $atts, 'overlay_opacity', '.6' ) . ';';
+	$css_overlay[] = 'opacity:' . elanta_viewer_get_range_value( $atts, 'overlay_opacity', '.6' ) . ';';
 
 
 	if ( ! empty( $atts['overlay_blend'] ) ) {
@@ -507,14 +506,14 @@ if ( ! empty( $atts['style_tooltips'] ) ) {
 }
 
 echo '<style>';
-echo $css_overlay;
-echo $filter_css;
-echo $tooltips_css;
+echo esc_html( $css_overlay );
+echo esc_html( $filter_css );
+echo esc_html( $tooltips_css );
 echo '</style>';
 
 $atts            = array_diff_key( $atts, $default_labels, $some_navbars, $overlay );
-$atts            = apply_filters( 'panorama_before_render_atts', $atts );
-$class_container = apply_filters( 'panorama_class_wrapper', $class_container );
+$atts            = apply_filters( 'elanta_viewer_before_render_atts', $atts );
+$class_container = apply_filters( 'elanta_viewer_class_wrapper', $class_container );
 
 ?>
 <div id="ps_el_<?php echo esc_attr( $atts['container_id'] ); ?>" class="<?php echo esc_attr( $class_container ); ?>"

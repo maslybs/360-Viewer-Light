@@ -1,12 +1,12 @@
 <?php
 
-namespace DadBuilders;
+namespace ElantaBuilder;
 
-use DadBuilders;
+use ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 class Loader {
 
@@ -31,21 +31,14 @@ class Loader {
 			return null;
 		}
 
-		/*$default_headers = array(
-			'Type' => '',
-		);
-
-		$config_data = get_file_data( DADBUILDERS_DATA . 'config.php', $default_headers, 'config' );
-		*/
-
-		$this->converter = new DadBuilders\Converter();
+		$this->converter = new ElantaBuilder\Converter();
 
 		$this->type_from = $type_from;
 		$this->type_to   = $type_to;
 
 		$this->params = Parse::parse( array(
 			'type' => $type_from,
-			'file' => DADBUILDERS_DATA . 'config.php',
+			'file' => ELANTA_BUILDER_DATA . 'config.php',
 		) );
 
 	}
@@ -91,8 +84,8 @@ class Loader {
 	 * @return string
 	 */
 	public function getTmplFile() {
-		$this->tmpl_file = DADBUILDERS_DATA . 'tmpl.php';
-		return apply_filters( 'DadBuilders/template/file', $this->tmpl_file );
+		$this->tmpl_file = ELANTA_BUILDER_DATA . 'tmpl.php';
+		return apply_filters( 'ElantaBuilder/template/file', $this->tmpl_file );
 	}
 
 }

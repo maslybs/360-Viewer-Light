@@ -1,17 +1,17 @@
 <?php
 
-namespace DadBuilders;
+namespace ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+} // Exit if accessed directly
 
-define( 'DADBUILDERS_VERSION', '1.0.0' );
-define( 'DADBUILDERS__FILE__', __FILE__ );
-define( 'DADBUILDERS_PATH', wp_normalize_path( dirname( DADBUILDERS__FILE__ ) ) . '/' );
-define( 'DADBUILDERS_PARENT', dirname( DADBUILDERS_PATH ) . '/' );
-define( 'DADBUILDERS_DATA', DADBUILDERS_PARENT . 'data/' );
-define( 'DADBUILDERS_DATA_URL', plugins_url( '/data/', DADBUILDERS_DATA ) );
+define( 'ELANTA_BUILDER_VERSION', '1.0.0' );
+define( 'ELANTA_BUILDER__FILE__', __FILE__ );
+define( 'ELANTA_BUILDER_PATH', wp_normalize_path( dirname( ELANTA_BUILDER__FILE__ ) ) . '/' );
+define( 'ELANTA_BUILDER_PARENT', dirname( ELANTA_BUILDER_PATH ) . '/' );
+define( 'ELANTA_BUILDER_DATA', ELANTA_BUILDER_PARENT . 'data/' );
+define( 'ELANTA_BUILDER_DATA_URL', plugins_url( '/data/', ELANTA_BUILDER_DATA ) );
 
 /**
  * Main plugin class.
@@ -33,7 +33,7 @@ class Core {
 	public static function instance() {
 		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
-			do_action( 'dadBuilders/loaded' );
+			do_action( 'ElantaBuilder/loaded' );
 		}
 
 		return self::$instance;
@@ -49,7 +49,7 @@ class Core {
 
 		$this->init_components();
 
-		do_action( 'dadBuilders/init' );
+		do_action( 'ElantaBuilder/init' );
 	}
 
 	/**
@@ -61,9 +61,7 @@ class Core {
 		$this->loader    = new Loader();
 		$this->converter = new Converter();
 		$this->elementor = new initElementor();
-
-
-		$this->wpbakery = new initWpbakery();
+		$this->wpbakery  = new initWpbakery();
 	}
 
 
@@ -73,7 +71,7 @@ class Core {
 	 */
 	private function register_autoloader() {
 
-		require DADBUILDERS_PATH . 'autoloader.php';
+		require ELANTA_BUILDER_PATH . 'autoloader.php';
 
 		Autoloader::run();
 	}

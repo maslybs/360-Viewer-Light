@@ -3,14 +3,14 @@
  * User: elanta https://codecanyon.net/user/elanta/portfolio
  * Date: 27.12.2018
  *
- * @package PVIEWER/Enqueue
+ * @package ELANTA_VIEWER/Enqueue
  */
 
-namespace PViewerCore;
+namespace ElantaViewerCore;
 
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 
 /**
  * Enqueue scripts and styles.
@@ -41,8 +41,8 @@ class Enqueue {
 	 * @access public
 	 */
 	public function __construct() {
-		$this->data_path = PVR_PATH . 'data/';
-		$this->data_url  = PVR_URL . 'data/';
+		$this->data_path = ELANTA_VIEWER_PATH . 'data/';
+		$this->data_url  = ELANTA_VIEWER_URL . 'data/';
 	}
 
 	/**
@@ -65,11 +65,11 @@ class Enqueue {
 	public function admin_enqueue_css_js() {
 
 		/**
-		 * PViewerCore enqueue.
+		 * ElantaViewerCore enqueue.
 		 *
 		 * @since 1.0.0
 		 */
-		do_action( 'panorama_before_admin_enqueue' );
+		do_action( 'elantaBuilder_before_admin_enqueue' );
 
 		wp_enqueue_script(
 			'three',
@@ -163,11 +163,11 @@ class Enqueue {
 		wp_add_inline_style( 'featherlight', $custom_css );
 
 		/**
-		 * PViewerCore enqueue.
+		 * ElantaViewerCore enqueue.
 		 *
 		 * @since 1.0.0
 		 */
-		do_action( 'panorama_after_admin_enqueue' );
+		do_action( 'elantaBuilder_after_admin_enqueue' );
 
 	}
 
@@ -179,11 +179,11 @@ class Enqueue {
 	public function enqueue_css_js() {
 
 		/**
-		 * PViewerCore enqueue.
+		 * ElantaViewerCore enqueue.
 		 *
 		 * @since 1.0.0
 		 */
-		do_action( 'panorama_before_enqueue' );
+		do_action( 'elantaBuilder_before_enqueue' );
 
 		wp_enqueue_script(
 			'three',
@@ -261,11 +261,11 @@ class Enqueue {
 		);
 
 		/**
-		 * PViewerCore enqueue.
+		 * ElantaViewerCore enqueue.
 		 *
 		 * @since 1.0.0
 		 */
-		do_action( 'panorama_after_enqueue' );
+		do_action( 'elantaBuilder_after_enqueue' );
 
 	}
 

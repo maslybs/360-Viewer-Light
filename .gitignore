@@ -1,5 +1,4 @@
 .DS_Store
-.idea 
+.idea
 package-lock.json
-phpcs.xml.dist
 node_modules/*

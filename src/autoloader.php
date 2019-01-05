@@ -3,14 +3,14 @@
  * User: elanta https://codecanyon.net/user/elanta/portfolio
  * Date: 27.12.2018
  *
- * @package PVIEWER/Autoloader
+ * @package ELANTA_VIEWER/Autoloader
  */
 
-namespace PViewerCore;
+namespace ElantaViewerCore;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 /**
  * Class loader.

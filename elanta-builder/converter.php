@@ -1,12 +1,10 @@
 <?php
 
-namespace DadBuilders;
-
-use DadBuilders;
+namespace ElantaBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+	exit;
+} // Exit if accessed directly
 
 class Converter {
 
@@ -33,42 +31,22 @@ class Converter {
 
 		if ( ! empty( $value_param['element'] ) ) {
 
+
 			$val = ! empty( $value_param['value'] ) ? $value_param['value'] : '';
 
-			if ( $replace_to == 'elementor' ) {
+			if ( 'elementor' !== $replace_to ) {
 
-				/*if ( is_string( $val ) ) {
+				if ( is_array( $val ) && empty( $val[0] ) ) {
+					$value_param['value'] = '';
+				}
 
-					if ( $val == 'on' ) {
-						$val = 'yes';
-					} elseif ( $val == 'off' ) {
-						$val = 'no';
-					}
-
-					$val = ! empty( $value_param['not_empty'] ) ? 'yes' : $val;
-
-				}*/
-
-			} else {
-				$val = ! empty( $value_param['not_empty'] ) ? 'true' : 'false';
+				if ( ! empty( $value_param['not_empty'] ) ) {
+					$value_param['element'] .= '!';
+					$val                     = '';
+				}
 			}
 
-
 			$conditionals = array( $value_param['element'] => $val );
-
-			/*if ( ! empty( $all_params ) ) {
-				foreach ( $all_params as $param ) {
-					if ( $param['param_name'] == $value_param['element'] && ! empty( $param['dependency'] ) ) {
-
-						$dep_recursive = $this->conditionals( $param['dependency'], $replace_to, $all_params, $param_wrap );
-
-						if ( ! empty( $dep_recursive ) ) {
-							$conditionals = array_merge( $conditionals, $dep_recursive );
-						}
-
-					}
-				}
-			}*/
 
 			return $conditionals;
 
@@ -175,7 +153,7 @@ class Converter {
 			return $all_params;
 		}
 
-		$file = DADBUILDERS_PATH . $replace_to . '/compatibility.php';
+		$file = ELANTA_BUILDER_PATH . $replace_to . '/compatibility.php';
 
 		$compatibility_params = array();
 		if ( file_exists( $file ) && is_readable( $file ) ) {
