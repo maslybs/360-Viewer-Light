@@ -129,43 +129,17 @@ if ( empty( $atts['enable_marker'] ) ) {
 
 				if ( 'html' === $marker['type_marker'] ) {
 
-					if ( ! empty( $marker['template'] ) && 'custom' === $marker['template'] && ! empty( $marker['html'] ) ) {
-
-						$html = $marker['html'];
-
-						if ( ! empty( $marker['post_id'] ) ) {
-							$marker['product_id'] = $marker['post_id'];
-							$html                 = str_replace(
-								'{short}',
-								wp_kses_post(
-									apply_filters(
-										'the_excerpt',
-										get_the_excerpt(
-											$marker['post_id']
-										)
-									)
-								),
-								$html
-							);
-
-							$html = str_replace(
-								'{title}',
-								esc_html( get_the_title( $marker['post_id'] ) ),
-								$html
-							);
-						}
-					} else {
-						$template = 'default';
-						if ( ! empty( $marker['template'] ) && 'custom' !== $marker['template'] ) {
-							$template = $marker['template'];
-						}
-						$marker['product_id'] = $marker['post_id'];
-
-						ob_start();
-						$product_template = ELANTA_BUILDER_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
-						require apply_filters( 'elanta_viewer_marker_template', $product_template, $marker );
-						$html = ob_get_clean();
+					$template = 'default';
+					if ( ! empty( $marker['template'] ) && 'custom' !== $marker['template'] ) {
+						$template = $marker['template'];
 					}
+					$marker['product_id'] = $marker['post_id'];
+
+					ob_start();
+					$product_template = ELANTA_BUILDER_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
+					require apply_filters( 'elanta_viewer_marker_template', $product_template, $marker );
+					$html = ob_get_clean();
+
 
 					$html                            = apply_filters( 'widget_text_content', $html );
 					$atts['markers'][ $key ]['html'] = base64_encode( stripcslashes( urldecode( $html ) ) );
@@ -181,61 +155,23 @@ if ( empty( $atts['enable_marker'] ) ) {
 						$atts['markers'][ $key ]['html'] = 'text marker';
 					}
 
+					unset( $atts['markers'][ $key ]['circle'] );
 					unset( $atts['markers'][ $key ]['image'] );
 
 				} elseif ( 'product' === $marker['type_marker'] && ! empty( $marker['product_id'] ) ) {
 
-					if ( ! empty( $marker['template'] ) && 'custom' === $marker['template'] && ! empty( $marker['html'] ) ) {
-
-						$html = $marker['html'];
-
-						if ( function_exists( 'wc_get_product' ) ) {
-							$product = wc_get_product( $marker['product_id'] );
-							$html    = str_replace(
-								'{sale_price}',
-								wp_kses_post( $product->get_sale_price() ),
-								$html
-							);
-
-							$html = str_replace(
-								'{price}',
-								wp_kses_post( $product->get_price() ),
-								$html
-							);
-						}
-
-						$html = str_replace(
-							'{short}',
-							wp_kses_post(
-								apply_filters(
-									'the_excerpt',
-									get_the_excerpt(
-										$marker['product_id']
-									)
-								)
-							),
-							$html
-						);
-
-						$html = str_replace(
-							'{title}',
-							esc_html( get_the_title( $marker['product_id'] ) ),
-							$html
-						);
-
-					} else {
-						$template = 'default';
-						if ( ! empty( $marker['template'] ) && 'custom' !== $marker['template'] ) {
-							$template = $marker['template'];
-						}
-						ob_start();
-						$product_template = ELANTA_BUILDER_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
-						require apply_filters( 'elanta_viewer_marker_template', $product_template, $marker );
-						$html = ob_get_clean();
+					$template = 'default';
+					if ( ! empty( $marker['template'] ) && 'custom' !== $marker['template'] ) {
+						$template = $marker['template'];
 					}
+					ob_start();
+					$product_template = ELANTA_BUILDER_DATA . 'templates/product-' . esc_attr( $template ) . '.php';
+					require apply_filters( 'elanta_viewer_marker_template', $product_template, $marker );
+					$html = ob_get_clean();
 
 					$atts['markers'][ $key ]['html'] = trim( base64_encode( stripcslashes( urldecode( $html ) ) ) );
 
+					unset( $atts['markers'][ $key ]['circle'] );
 					unset( $atts['markers'][ $key ]['image'] );
 
 				} elseif ( 'circle' === $marker['type_marker'] ) {

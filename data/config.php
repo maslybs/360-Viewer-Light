@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 return array(
 	'name'        => esc_html__( '360 Viewer Light', 'elanta-viewer-light' ),
 	'description' => esc_html__( 'Photo sphere viewer and the beautiful background for Elementor', 'elanta-viewer-light' ),
-	'base'        => 'elenta_viewer_el',
+	'base'        => 'photo_panorama_el',
 	'icon'        => 'photo-panorama-el_icon',
 	'category'    => esc_html__( 'Content', 'elanta-viewer-light' ),
 	'params'      => array_merge(

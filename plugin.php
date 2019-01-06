@@ -5,7 +5,7 @@
  * Description: Add 360 images for your website. It works for Elementor and WPBakery.
  * Author: elantawp
  * Author URI: https://profiles.wordpress.org/elantawp
- * Version: 1.0.0
+ * Version: 1.0.1
  * Text Domain: elanta-viewer-light
  *
  * @package ELANTA_VIEWER
