@@ -1,6 +1,5 @@
 # 360 Viewer Light #
 Contributors: elantawp
-Donate link: https://360-viewer.pro-app.com.ua/
 Tags: 360 panorama, 360 viewer, 360 virtual tour, elementor, gyroscope, hotspots, interactive tours, panorama, panorama360, panoramic view, photosphere, real estate tour, sphere, virtual tour, visual composer
 Requires at least: 4.7.0
 Tested up to: 5.0
