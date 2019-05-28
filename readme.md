@@ -1,6 +1,5 @@
 # 360 Viewer Light #
 Contributors: elantawp
-Donate link: http://demo.pro-app.com.ua
 Tags: 360 panorama, 360 viewer, 360 virtual tour, elementor, gyroscope, hotspots, interactive tours, panorama, panorama360, panoramic view, photosphere, real estate tour, sphere, virtual tour, visual composer
 Requires at least: 4.7.0
 Tested up to: 5.0
@@ -44,7 +43,7 @@ Installation is simple:
 2. Activate the plugin
 3. Add a new Elementor widget or WPBakery shortcode to page
 4. To display the 360 Viewer Light on the frontend of your site.
-5. Plese try https://demo.pro-app.com.ua/customers/?autologin=true
+5. Plese try https://360-viewer.pro-app.com.ua/customers/?autologin=true
 
 ## Frequently Asked Questions ##
 
