@@ -132,7 +132,35 @@ if ( ! function_exists( 'elanta_viewer_convert_bool' ) ) {
 
 				return $val;
 			},
-			$atts );
+			$atts
+		);
 
 	}
 }
+
+if ( ! function_exists( 'elanta_viewer_add_demo_links' ) ) {
+
+	/**
+	 * The function render the demo links.
+	 *
+	 * @param array $plugin_meta Plugin meta.
+	 * @param array $plugin_file File.
+	 * @param array $plugin_data All data of plugins.
+	 * @param array $status      Status.
+	 *
+	 * @return array
+	 */
+	function elanta_viewer_add_demo_links( $plugin_meta, $plugin_file, $plugin_data, $status ) {
+
+		if ( ! empty( $plugin_data['slug'] ) && '360-viewer-light-for-elementor-wpbakery' === $plugin_data['slug'] ) {
+			$plugin_meta[] = '<a href="https://360-viewer.pro-app.com.ua/"><b>' . esc_html__( 'Check the Demo', 'elanta-viewer-light' ) . '</b></a>';
+			$plugin_meta[] = '<a href="https://codecanyon.net/item/360-photo-viewer-section-background-for-elementor/22881725"><b>' . esc_html__( 'Buy PRO (Virtual Tour, Gallery etc)', 'elanta-viewer-light' ) . '</b></a>';
+		}
+
+		return $plugin_meta;
+	}
+}
+
+add_filter( 'plugin_row_meta', 'elanta_viewer_add_demo_links', 10, 4 );
+
+

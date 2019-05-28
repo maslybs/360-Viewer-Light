@@ -1,4 +1,10 @@
 <?php
+/**
+ *
+ * Init Elementor page builder.
+ *
+ * @package ElantaBuilder
+ */
 
 namespace ElantaBuilder;
 
@@ -8,7 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-class initElementor {
+/**
+ * Init class.
+ */
+class InitElementor {
 
 	/**
 	 * Elementor constructor.

@@ -19,6 +19,8 @@ define( 'ELANTA_BUILDER_DATA_URL', plugins_url( '/data/', ELANTA_BUILDER_DATA ) 
 class Core {
 
 	/**
+	 * Instance.
+	 *
 	 * @var Core
 	 */
 	public static $instance = null;
@@ -26,14 +28,14 @@ class Core {
 
 	/**
 	 * @static
+	 * @return Plugin
 	 * @since  1.0.0
 	 * @access public
-	 * @return Plugin
 	 */
 	public static function instance() {
 		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
-			do_action( 'ElantaBuilder/loaded' );
+			do_action( 'elantabuilder/loaded' );
 		}
 
 		return self::$instance;
@@ -49,7 +51,7 @@ class Core {
 
 		$this->init_components();
 
-		do_action( 'ElantaBuilder/init' );
+		do_action( 'elantabuilder/init' );
 	}
 
 	/**
@@ -57,15 +59,20 @@ class Core {
 	 * @access private
 	 */
 	private function init_components() {
-		$this->parse     = new Parse();
-		$this->loader    = new Loader();
-		$this->converter = new Converter();
-		$this->elementor = new initElementor();
-		$this->wpbakery  = new initWpbakery();
+
+		new Autoloader();
+		new Parse();
+		new Loader();
+		new Converter();
+		new InitElementor();
+		new InitWpbakery();
+
 	}
 
 
 	/**
+	 * Register autoloader.
+	 *
 	 * @since  1.6.0
 	 * @access private
 	 */
@@ -73,7 +80,6 @@ class Core {
 
 		require ELANTA_BUILDER_PATH . 'autoloader.php';
 
-		Autoloader::run();
 	}
 
 	/**

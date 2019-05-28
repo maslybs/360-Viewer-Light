@@ -1,4 +1,10 @@
 <?php
+/**
+ * User: elanta https://codecanyon.net/user/elanta/portfolio
+ * Date: 27.12.2018
+ *
+ * @package ElantaBuilder/Autoloader
+ */
 
 namespace ElantaBuilder;
 
@@ -6,48 +12,76 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
+/**
+ * Builder Autoloader.
+ *
+ * @since  1.0.0
+ */
 class Autoloader {
 
 	/**
 	 * All classes.
+	 *
 	 * @since  1.0.0
-	 * @access private
+	 * @access public
 	 * @var $classes_map
 	 */
-	private static $classes_map = [
+	public static $classes_map = array(
 		'Parse'         => 'parse.php',
 		'Converter'     => 'converter.php',
 		'Loader'        => 'loader.php',
-		'initElementor' => 'elementor/init.php',
-		'initWpbakery'  => 'wpbakery/init.php',
-	];
+		'InitElementor' => 'elementor/init.php',
+		'InitWpbakery'  => 'wpbakery/init.php',
+	);
 
 	/**
+	 * Run Autoload.
+	 *
 	 * @static
+	 * @throws \Exception Exception.
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public static function run() {
-		spl_autoload_register( [ __CLASS__, 'autoload' ] );
+	public function init() {
+
+		spl_autoload_register( array( __CLASS__, 'autoload' ) );
+
 	}
 
 	/**
+	 *
+	 * Load class.
+	 *
 	 * @static
+	 *
+	 * @param string $relative_class_name Class name.
+	 *
 	 * @since  1.0.0
 	 * @access private
 	 */
 	private static function load_class( $relative_class_name ) {
+
 		if ( isset( self::$classes_map[ $relative_class_name ] ) ) {
-			$filename = ELANTA_BUILDER_PATH . '/' . self::$classes_map[ $relative_class_name ];
+			$filename = ELANTA_BUILDER_PATH . self::$classes_map[ $relative_class_name ];
 		} else {
-			$filename = strtolower( preg_replace( [ '/([a-z])([A-Z])/', '/_/', '/\\\/' ], [
-				'$1-$2',
-				'-',
-				DIRECTORY_SEPARATOR,
-			], $relative_class_name ) );
+
+			$filename = strtolower(
+				preg_replace(
+					array( '/([a-z])([A-Z])/', '/_/', '/\\\/' ),
+					array(
+						'$1-$2',
+						'-',
+						DIRECTORY_SEPARATOR,
+					),
+					$relative_class_name
+				)
+			);
 
 			$filename = ELANTA_BUILDER_PATH . $filename . '.php';
+
 		}
+
+		$filename = strtolower( $filename );
 
 		if ( is_readable( $filename ) ) {
 			require $filename;
@@ -55,11 +89,16 @@ class Autoloader {
 	}
 
 	/**
+	 * Spl autoload.
+	 *
 	 * @static
+	 *
+	 * @param string $class Class name.
+	 *
 	 * @since  1.0.0
-	 * @access private
+	 * @access protected
 	 */
-	private static function autoload( $class ) {
+	protected static function autoload( $class ) {
 		if ( 0 !== strpos( $class, __NAMESPACE__ . '\\' ) ) {
 			return;
 		}
@@ -73,3 +112,6 @@ class Autoloader {
 		}
 	}
 }
+
+$loader = new Autoloader();
+$loader->init();

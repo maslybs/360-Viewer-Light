@@ -13,24 +13,27 @@ $loader = new ElantaBuilder\Loader( 'wpbakery', 'wpbakery' );
 
 if ( function_exists( 'vc_map' ) ) {
 
-	$base_params                     = $loader->getBaseParams();
-	$base_params['front_enqueue_js'] = ELANTA_VIEWER_URL . '/data/assets/admin/js/front-editor.js';
+	$base_params                     = $loader->get_base_params();
+	$base_params['front_enqueue_js'] = ELANTA_BUILDER_DATA_URL . 'assets/admin/js/front-editor.js';
 
 	vc_map( $base_params );
 
-	add_shortcode( $base_params['base'], function ( $atts ) {
+	add_shortcode(
+		$base_params['base'],
+		function ( $atts ) {
 
-		ob_start();
+			ob_start();
 
-		if ( empty( $atts ) ) {
-			$atts = array();
+			if ( empty( $atts ) ) {
+				$atts = array();
+			}
+
+			include ELANTA_BUILDER_DATA . 'tmpl.php';
+
+			return ob_get_clean();
+
 		}
-
-		include_once ELANTA_BUILDER_DATA . 'tmpl.php';
-
-		return ob_get_clean();
-
-	} );
+	);
 
 }
 

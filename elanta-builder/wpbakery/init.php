@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-class initWpbakery {
+class InitWpbakery {
 
 	/**
 	 * Wpbakery constructor.

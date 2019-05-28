@@ -6,6 +6,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
+
+/**
+ * Converter of params.
+ */
 class Converter {
 
 	/**
@@ -42,7 +46,7 @@ class Converter {
 
 				if ( ! empty( $value_param['not_empty'] ) ) {
 					$value_param['element'] .= '!';
-					$val                     = '';
+					$val                    = '';
 				}
 			}
 
@@ -164,7 +168,7 @@ class Converter {
 
 	}
 
-	public function getName( $params = null, $type_from = null ) {
+	public function get_name( $params = null, $type_from = null ) {
 
 		if ( $type_from == 'wpbakery' && ! empty( $params['name'] ) ) {
 			return $params['name'];
@@ -173,7 +177,7 @@ class Converter {
 		return '';
 	}
 
-	public function getSlug( $params = null, $type_from = null ) {
+	public function get_slug( $params = null, $type_from = null ) {
 		if ( $type_from == 'wpbakery' && ! empty( $params['base'] ) ) {
 			$suf = '';
 			if ( ! empty( $params['suf'] ) ) {

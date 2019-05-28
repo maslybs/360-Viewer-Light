@@ -6,14 +6,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
+/**
+ * Parse class.
+ */
 class Parse {
 
 	/**
-	 * Get params from file
+	 * Get params from file.
 	 *
-	 * @param null $type - page builder type
-	 * @param null $file - file path
-	 *
+	 * @param null $args All params.
 	 * @return null
 	 */
 	public static function parse( $args = null ) {
@@ -22,13 +23,16 @@ class Parse {
 			return null;
 		}
 
-		$file = apply_filters( 'ElantaBuilder/parse/path', $args['file'] );
+		$file = apply_filters(
+			'elantabuilder/parse/path',
+			$args['file']
+		);
 
 		if ( $file && file_exists( $file ) && is_readable( $file ) ) {
 
 			$file_content = include( $file );
 
-			if (  $args['type'] == 'vc' && ! empty( $file_content['params'] ) ) {
+			if ( 'vc' === $args['type'] && ! empty( $file_content['params'] ) ) {
 				return $file_content['params'];
 			}
 

@@ -1,4 +1,10 @@
 <?php
+/**
+ *
+ * Compatibility all params.
+ *
+ * @package ElantaBuilder
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -36,4 +42,5 @@ return array(
 	'dependency'  => 'condition',
 	'group'       => 'group',
 	'range'       => 'range',
+	'dynamic'     => 'dynamic',
 );

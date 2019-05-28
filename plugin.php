@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: 360 Viewer Light for Elementor & WPBakery
+ * Plugin Name: 360 Viewer Light
  * Plugin URI: https://demo.pro-app.com.ua
  * Description: Add 360 images for your website. It works for Elementor and WPBakery.
  * Author: elantawp
@@ -16,6 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+// If PRO version is enabled.
+if ( is_plugin_active( '360-viewer/plugin.php' ) ) {
+	return;
+}
+
 define( 'ELANTA_VIEWER_PATH', dirname( __FILE__ ) . '/' );
 define( 'ELANTA_VIEWER_URL', plugin_dir_url( __FILE__ ) );
 
@@ -25,6 +32,7 @@ define( 'ELANTA_VIEWER_URL', plugin_dir_url( __FILE__ ) );
 if ( ! class_exists( 'ElantaBuilder\\Core' ) ) {
 	require ELANTA_VIEWER_PATH . 'elanta-builder/core.php';
 }
+
 
 /*
  * Include additional functions.

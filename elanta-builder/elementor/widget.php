@@ -21,14 +21,14 @@ class ElantaBuilder_Widget extends Widget_Base {
 	 * @return string
 	 */
 	public function get_name() {
-		return $this->loader()->getSlug();
+		return $this->loader()->get_slug();
 	}
 
 	/**
 	 * @return string|void
 	 */
 	public function get_title() {
-		return $this->loader()->getName();
+		return $this->loader()->get_name();
 	}
 
 	/**
@@ -40,7 +40,7 @@ class ElantaBuilder_Widget extends Widget_Base {
 
 	protected function _register_controls() {
 
-		$params = $this->loader()->getParams();
+		$params = $this->loader()->get_params();
 
 		$result_params = array();
 		foreach ( $params as $param ) {
@@ -86,7 +86,7 @@ class ElantaBuilder_Widget extends Widget_Base {
 
 	protected function render() {
 
-		$atts = $this->get_settings();
+		$atts = $this->get_settings_for_display();
 
 		$atts = array_filter( $atts, function ( $e ) {
 			return ! empty( $e );
@@ -96,7 +96,7 @@ class ElantaBuilder_Widget extends Widget_Base {
 			return substr( $key, 0, 1 ) !== '_';
 		}, ARRAY_FILTER_USE_KEY );
 
-		include $this->loader()->getTmplFile();
+		include $this->loader()->get_tmpl_file();
 
 	}
 
