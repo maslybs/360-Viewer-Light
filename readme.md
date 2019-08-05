@@ -27,7 +27,7 @@ Create in a few seconds nice blocks with panoramic images to present your rooms,
 * AutoRotate on Start – automatically starts the animation of the rotation.
 * Blend mode – combine the colors of image or overlay color with panoramic image. In this case this allows to create styled panoramic images without editor.
 * Controls, Animations speed, mousewheel etc – and more
-* [Full List of Pro Features](https://codecanyon.net/item/360-photo-viewer-section-background-for-elementor/22881725)
+* [Full List of Pro Features](https://360-viewer.pro-app.com.ua/)
 
 When you upgrade to Pro you also get premium ticket and live chat support for the free version of 360 Viewer Light too!
 
