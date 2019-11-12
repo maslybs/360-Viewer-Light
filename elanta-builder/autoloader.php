@@ -65,23 +65,19 @@ class Autoloader {
 			$filename = ELANTA_BUILDER_PATH . self::$classes_map[ $relative_class_name ];
 		} else {
 
-			$filename = strtolower(
-				preg_replace(
-					array( '/([a-z])([A-Z])/', '/_/', '/\\\/' ),
-					array(
-						'$1-$2',
-						'-',
-						DIRECTORY_SEPARATOR,
-					),
-					$relative_class_name
-				)
+			$filename = preg_replace(
+				array( '/([a-z])([A-Z])/', '/_/', '/\\\/' ),
+				array(
+					'$1-$2',
+					'-',
+					DIRECTORY_SEPARATOR,
+				),
+				strtolower( $relative_class_name )
 			);
 
 			$filename = ELANTA_BUILDER_PATH . $filename . '.php';
 
 		}
-
-		$filename = strtolower( $filename );
 
 		if ( is_readable( $filename ) ) {
 			require $filename;
