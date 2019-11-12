@@ -72,7 +72,7 @@ class Autoloader {
 					'-',
 					DIRECTORY_SEPARATOR,
 				),
-				strtolower($relative_class_name)
+				strtolower( $relative_class_name )
 			);
 
 			$filename = ELANTA_BUILDER_PATH . $filename . '.php';
